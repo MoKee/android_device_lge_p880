@@ -1,6 +1,7 @@
 [
  {
-   "repository": "lge-kernel-p880",
-   "target_path": "kernel/lge/p880"
+   "repository": "MoKee/android_kernel_lge_p880",
+   "target_path": "kernel/lge/p880",
+   "branch": "jb-mr1_mkt"
  }
 ]
