@@ -4,9 +4,10 @@ bin/lgsecclkserver
 bin/nvcpud
 bin/rild
 bin/tf_daemon
+bin/BCM4330B1_002.001.003.0550.0633.hcd
 lib/hw/camera.tegra.so
 lib/hw/gps.tegra.so
-lib/hw/lights.x3.so
+lib/hw/lights.tegra.so
 lib/hw/sensors.tegra.so
 lib/hw/audio_policy.tegra.so
 lib/hw/audio.primary.tegra.so
@@ -74,7 +75,7 @@ etc/firmware/nvavp_vid_ucode.bin
 etc/firmware/fw_bcmdhd.bin
 etc/firmware/fw_bcmdhd_p2p.bin
 etc/firmware/fw_bcmdhd_apsta.bin
-etc/firmware/BCM4330B1_002.001.003.0550.0633.hcd
+#etc/firmware/BCM4330B1_002.001.003.0550.0633.hcd
 vendor/firmware/libpn544_fw.so
 lib/egl/libEGL_tegra_impl.so
 lib/egl/libGLESv2_tegra_impl.so
@@ -87,4 +88,4 @@ lib/libtinyalsa.so
 lib/libaudioavp.so
 # Camera is built against a modified libjpeg, and requires that one to
 # encode images
-lib/lgejpeg.so
+lib/libjpeg.so
