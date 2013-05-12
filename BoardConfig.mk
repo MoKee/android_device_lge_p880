@@ -76,3 +76,7 @@ BOARD_RIL_CLASS := ../../../device/lge/p880/ril/
 
 BOARD_CUSTOM_GRAPHICS := ../../../device/lge/p880/recovery-gfx.c
 BOARD_CHARGER_ENABLE_SUSPEND := true
+
+ifdef MK_RELEASE
+WITH_DEXPREOPT := true
+endif
