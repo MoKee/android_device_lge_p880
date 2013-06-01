@@ -108,6 +108,10 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     com.android.future.usb.accessory
 
+#Wifi
+PRODUCT_PACKAGES += \
+    wifimac
+
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc \
