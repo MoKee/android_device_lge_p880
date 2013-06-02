@@ -43,6 +43,9 @@ on fs
     # Create this file in case it doesn't exist, needed to switch wifi modes:
     write /data/misc/wifi/firmware_path ""
     chmod 0666 /data/misc/wifi/firmware_path
+    write /data/misc/wifi/config ""
+    chmod 0660 /data/misc/wifi/config
+    chown system wifi /data/misc/wifi/config
 
 on boot
         insmod /system/lib/modules/bthid.ko
@@ -367,7 +370,5 @@ service rmmod_rawip /system/bin/init.rawip 0
 
 on property:dev.bootcomplete=1
    write /sys/devices/platform/tegra-i2c.0/i2c-0/0-0039/run_calibration 1
+   exec /system/bin/wifimac 
 
-service wifimac /system/bin/wifimac
-   class main
-   oneshot 
