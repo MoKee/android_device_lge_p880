@@ -10,11 +10,13 @@ on early-init
 
 on init
     # See storage config details at http://source.android.com/tech/storage/
-    mkdir /storage 0050 system sdcard_r
     mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage 0050 system sdcard_r
     mkdir /storage/emulated 0555 root root
+    mkdir /storage/sdcard1 0775 system system
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
+    export SECONDARY_STORAGE /storage/sdcard1
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
 
@@ -23,8 +25,8 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-
-    mkdir /storage/sdcard1 0000 system system
+    symlink /storage/sdcard1 /extSdCard
+    symlink /storage/sdcard1 /mnt/extSdCard
 
 on fs
     mount_all ./fstab.x3
@@ -376,6 +378,14 @@ on post-fs-data
     setprop net.tcp.buffersize.hsdpa   4094,87380,393216,4096,16384,110208
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
+
+# Hardware tunable perms
+    chown root system /sys/devices/platform/spi_tegra.4/spi4.2/gamma_tuning
+    chown root system /sys/devices/platform/tspdrv/nforce_timed
+    chmod 0664 /sys/devices/platform/spi_tegra.4/spi4.2/gamma_tuning
+    chmod 0664 /sys/devices/platform/tspdrv/nforce_timed
+    restorecon /sys/devices/platform/spi_tegra.4/spi4.2/gamma_tuning
+    restorecon /sys/devices/platform/tspdrv/nforce_timed
 
 service insmod_rawip /system/bin/init.rawip 1
     user root
