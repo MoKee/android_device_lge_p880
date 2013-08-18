@@ -6,7 +6,7 @@ TARGET_BOOTANIMATION_NAME := vertical-720x1280
 # Release name
 PRODUCT_RELEASE_NAME := p880
 
-# Inherit some common MK stuff.
+# Inherit some common mk stuff.
 $(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
 # This device has NFC
