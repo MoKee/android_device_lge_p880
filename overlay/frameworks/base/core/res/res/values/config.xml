@@ -176,4 +176,7 @@
     </integer-array>
 
     <integer name="config_deviceHardwareKeys">7</integer>
+
+    <!-- Device supports LED flashlight -->
+    <bool name="config_enableTorch">true</bool>
 </resources>
