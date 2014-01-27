@@ -3,4 +3,7 @@
 
     <string name="tips_help_url">http://bbs.mfunz.com/forum-295-1.html</string>
 
+    <!-- Volume Rocker Wake -->
+    <bool name="config_show_volumeRockerWake">true</bool>
+
 </resources>
