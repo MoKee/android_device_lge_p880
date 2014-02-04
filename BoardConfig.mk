@@ -15,6 +15,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := $(TARGET_CPU_VARIANT)
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_32_BYTE_CACHE_LINE := true
 ARCH_ARM_USE_NON_NEON_MEMCPY := true
 TARGET_ARCH := arm
 
@@ -77,6 +78,9 @@ BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 
 ## Radio fixes
 BOARD_RIL_CLASS := ../../../device/lge/p880/ril/
+
+# Override healthd HAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.x3
 
 BOARD_CUSTOM_GRAPHICS := ../../../device/lge/p880/recovery-gfx.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lge/p880/recovery-keys.c
