@@ -23,4 +23,5 @@
     <!-- Processor menu, freq cap files -->
     <string name="max_cpu_freq_file">/sys/module/cpu_tegra/parameters/cpu_user_cap</string>
 
+    <bool name="use_paypal">false</bool>
 </resources>
